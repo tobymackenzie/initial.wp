@@ -2,14 +2,19 @@
 <?php
 /*
 Command: installWordPress
-Install WordPress into web folder
+Install WordPress into web folder, or update if it is already installed.  Change branch to new version branch if you want to update to a new point or full version.
 */
 
-$version = "3.9.1";
+$branch = "3.9-branch";
 
 $path = __DIR__ . "/../web/_wp";
 
 if(!file_exists($path)){
-	passthru("git clone https://github.com/WordPress/WordPress.git {$path}");
+	/*--clone repo
+	Do shallow clone to significantly reduce cloning time
+	*/
+	passthru("git clone --depth 1 --branch {$branch} https://github.com/WordPress/WordPress.git {$path}");
+}else{
+	//--update
+	passthru("cd {$path} && git checkout {$branch} && git pull");
 }
-passthru("cd {$path} && git checkout {$version}");

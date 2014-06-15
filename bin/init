@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+/*
+Command: init
+Do initial setup for this application:
+- install vendor libraries
+- install WordPress
+*/
+
+$binPath = __DIR__;
+
+$commands = Array(
+	"{$binPath}/composer install"
+	,"{$binPath}/installWordPress"
+);
+$return = 0;
+foreach($commands as $command){
+	echo "Running: {$command}\n";
+	passthru($command, $return);
+	if($return !== 0){
+		echo "Failed with return status: {$return}";
+		exit($return);
+	}
+}

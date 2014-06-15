@@ -1,0 +1,17 @@
+{
+	"name": "tjm/wp-initial"
+	,"description": "WordPress project starting point"
+	,"authors": [
+		{
+			"name": "Toby Mackenzie"
+			,"email": "public@tobymackenzie.com"
+			,"homepage": "http://www.tobymackenzie.com"
+		}
+	]
+	,"minimum-stability": "dev"
+	,"require": {
+		"php": ">=5.3.3"
+		,"tjm/wp-base-theme": "0.1.x@dev"
+		,"tjm/wpthemehelper": "master@dev"
+	}
+}

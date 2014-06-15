@@ -1,0 +1,1 @@
+../../_wp/wp-content/plugins/hello.php

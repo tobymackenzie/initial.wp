@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+/*
+Command: installWordPress
+Install WordPress into web folder
+*/
+
+$version = "3.9.1";
+
+$path = __DIR__ . "/../web/_wp";
+
+if(!file_exists($path)){
+	passthru("git clone https://github.com/WordPress/WordPress.git {$path}");
+}
+passthru("cd {$path} && git checkout {$version}");

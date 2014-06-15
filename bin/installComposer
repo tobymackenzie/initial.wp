@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+/*
+Command: installComposer
+Install composer.phar.  If user is root, will move into a global location.
+
+Arguments:
+	path: (Optional) Path to move script to
+*/
+
+$isRoot = (posix_getuid() === 0);
+echo "installing composer";
+if($isRoot){
+	echo " globally\n";
+}elseif($argc > 1){
+	echo " to '{$argv[1]}'";
+}else{
+	echo " locally\n";
+}
+passthru('curl -sS https://getcomposer.org/installer | php');
+if($argc > 1){
+	$mvLocation = $argv[1];
+}else{
+	$mvLocation = ($isRoot) ? '/usr/local/bin/composer' : null;
+}
+if($mvLocation && $mvLocation !== '.'){
+	passthru('mv composer.phar ' . $mvLocation);
+}

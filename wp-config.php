@@ -1,7 +1,7 @@
 <?php
 use TJM\WPThemeHelper\ConfigHelper;
 
-require_once(__DIR__ . '/../vendor/autoload.php');
+require_once(__DIR__ . '/vendor/autoload.php');
 
 ConfigHelper::init(Array(
 	'constants'=> Array(

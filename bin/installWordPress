@@ -2,19 +2,13 @@
 <?php
 /*
 Command: installWordPress
-Install WordPress into web folder, or update if it is already installed.  Change branch to new version branch if you want to update to a new point or full version.
+Symlink WordPress into web directory so it can be accessed.  Symlink wp-config into vendor/wordpress so Wordpress will find it but it won't be in a web accessible location.
 */
 
-$branch = "3.9-branch";
+$wpSrcPath = "../vendor/wordpress/wordpress";
+$wpDestPath = __DIR__ . "/../web/_wp";
+$wpConfigSrcPath = "../../wp-config.php";
+$wpConfigDestPath = __DIR__ . "/../vendor/wordpress";
 
-$path = __DIR__ . "/../web/_wp";
-
-if(!file_exists($path)){
-	/*--clone repo
-	Do shallow clone to significantly reduce cloning time
-	*/
-	passthru("git clone --depth 1 --branch {$branch} https://github.com/WordPress/WordPress.git {$path}");
-}else{
-	//--update
-	passthru("cd {$path} && git checkout {$branch} && git pull");
-}
+passthru("ln -nfs {$wpSrcPath} {$wpDestPath}");
+passthru("ln -nfs {$wpConfigSrcPath} {$wpConfigDestPath}");

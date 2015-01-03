@@ -16,16 +16,16 @@
 		"php": ">=5.3.3"
 		,"tjm/wp-base-theme": "0.1.x@dev"
 		,"tjm/wpthemehelper": "master@dev"
-		,"wordpress/wordpress": "3.9.1"
+		,"wordpress/wordpress": "4.1"
 	}
 	,"repositories": [
 		{
 			"type": "package"
 			,"package": {
 				"name": "wordpress/wordpress"
-				,"version": "3.9.1"
+				,"version": "4.1"
 				,"dist": {
-					"url": "http://github.com/wordpress/wordpress/archive/3.9.1.zip"
+					"url": "http://github.com/wordpress/wordpress/archive/4.1.zip"
 					,"type": "zip"
 				}
 			}

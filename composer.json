@@ -14,8 +14,8 @@
 	,"minimum-stability": "dev"
 	,"require": {
 		"php": ">=5.3.3"
-		,"tjm/wp-base-theme": "0.1.x@dev"
-		,"tjm/wpthemehelper": "master@dev"
+		,"tjm/wp-base-theme": "^1"
+		,"tjm/wpthemehelper": "^1"
 		,"wordpress/wordpress": "3.9.1"
 	}
 	,"repositories": [

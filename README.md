@@ -1,6 +1,8 @@
 WP Initial
 ==========
 
+[Superseded by [tobymackenzie/base.proj](https://github.com/tobymackenzie/base.proj/tree/master/src/wordpress)/]
+
 This is a starting point for working on WordPress projects.  It is set up to use [TJMBaseTheme](https://github.com/tobymackenzie/wp-TJMBaseTheme), though it doesn't have to.  It uses [composer](http://getcomposer.org) for loading TJMBaseTheme and its dependencies, and the [WordPress git repo](https://github.com/WordPress/WordPress) for installing WordPress.
 
 Usage
